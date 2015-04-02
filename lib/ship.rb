@@ -2,7 +2,7 @@ class Ship
   attr_reader :size
   DEFAULT_SHIP_SIZE = 1
 
-  def initialize(options)
+  def initialize(options = {})
     @size = options.fetch(:size, DEFAULT_SHIP_SIZE)
     @hits = 0
   end

@@ -1,0 +1,50 @@
+<table>
+<% @board.each_slice(Math.sqrt(@board.size)) do |row| %>
+  <tr>
+    <% row.each do |cell| %>
+    <td> <%= cell.last.content.class %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<table>
+<% @player_two_board.each_slice(Math.sqrt(@player_two_board.size)) do |row| %>
+  <tr>
+    <% row.each do |cell| %>
+    <td> <%= cell.last.content.class %></td>
+    <% end %>
+  </tr>
+<% end %>
+
+</table>
+
+<!--
+# <tr>
+#   <th></th>
+#   <th scope="col">A</th>
+#   <th scope="col">B</th>
+#   <th scope="col">C</th>
+# </tr>
+# <tr>
+#   <th scope="row">1</th>
+#     <td><input type="radio" name="A1" value="water">A1</td>
+#     <td><input type="radio" name="B1" value="water">B1</td>
+#     <td><input type="radio" name="C1" value="water">C1</td>
+# </tr>
+# <tr>
+#   <th scope="row">2</th>
+#     <td><input type="radio" name="A2" value="water">A2</td>
+#     <td><input type="radio" name="B2" value="ship">B2</td>
+#     <td><input type="radio" name="C2" value="water">C2</td>
+# </tr>
+# <tr>
+#   <th scope="row">3</th>
+#     <td><input type="radio" name="A3" value="water">A3</td>
+#     <td><input type="radio" name="B3" value="water">B3</td>
+#     <td><input type="radio" name="C3" value="water">C3</td>
+# </tr> -->
+
+<form action"/place_ship" method="post">
+<input type="text" name="ship_coord" placeholder="ship coord e.g. A1">
+<input type="submit" value="Submit">
